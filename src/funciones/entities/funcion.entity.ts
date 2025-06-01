@@ -1,11 +1,11 @@
 export class Funcion {
   id: number;
   nombre: string;
-  segundo_dia: boolean;
+  segundoDia: boolean;
 
-  constructor(id: number, nombre: string, segundo_dia: boolean) {
+  constructor(id: number, nombre: string, segundoDia: boolean) {
     this.id = id;
     this.nombre = nombre;
-    this.segundo_dia = segundo_dia;
+    this.segundoDia = segundoDia;
   }
 }
