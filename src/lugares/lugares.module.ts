@@ -5,5 +5,6 @@ import { LugaresController } from './lugares.controller';
 @Module({
   controllers: [LugaresController],
   providers: [LugaresService],
+  exports: [LugaresService],
 })
 export class LugaresModule {}

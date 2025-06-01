@@ -11,7 +11,6 @@ export class LugaresService {
     new Lugar(5, 'Zona Familiar', 1000000),
     new Lugar(6, 'Zona General', 750000),
   ];
-  contadorId: number = 7;
 
   findAll() {
     return this.lugares;
