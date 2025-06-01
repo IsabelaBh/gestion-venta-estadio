@@ -2,8 +2,9 @@ import { Module } from '@nestjs/common';
 import { LugaresModule } from './lugares/lugares.module';
 import { AsientosModule } from './asientos/asientos.module';
 import { UsuariosModule } from './usuarios/usuarios.module';
+import { FuncionesModule } from './funciones/funciones.module';
 
 @Module({
-  imports: [LugaresModule, AsientosModule, UsuariosModule]
+  imports: [LugaresModule, AsientosModule, UsuariosModule, FuncionesModule]
 })
 export class AppModule {}
