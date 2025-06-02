@@ -10,7 +10,7 @@ import { FuncionesService } from 'src/funciones/funciones.service';
 import { UsuariosService } from 'src/usuarios/usuarios.service';
 import { Asiento } from 'src/asientos/entities/asiento.entity';
 import { Usuario } from 'src/usuarios/entities/usuario.entity';
-import { Funcion } from 'src/funciones/entities/funcion.entity';
+import { EstadosEnum, Funcion } from 'src/funciones/entities/funcion.entity';
 
 @Injectable()
 export class VentasService {
@@ -25,6 +25,9 @@ export class VentasService {
 
   create(createVentaDto: CreateVentaDto) {
     const funcion = this.funcionesSer.findOne(createVentaDto.funcionId);
+
+    if (funcion.estado !== EstadosEnum.EN_PROCESO_VENTA)
+      throw new BadRequestException('La función ya empezó o finalizó');
 
     const asientos: Asiento[] = [];
 

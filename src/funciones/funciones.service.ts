@@ -51,4 +51,20 @@ export class FuncionesService {
 
     return 'Funcion eliminada';
   }
+
+  empezarFuncion(funcionId: number) {
+    const funcion = this.findOne(funcionId);
+
+    funcion.empezarFuncion();
+
+    return `La función ${funcion.nombre} ha empezado`;
+  }
+
+  finalizarFuncion(funcionId: number) {
+    const funcion = this.findOne(funcionId);
+
+    funcion.finalizarFuncion();
+
+    return `La función ${funcion.nombre} ha finalizado`;
+  }
 }

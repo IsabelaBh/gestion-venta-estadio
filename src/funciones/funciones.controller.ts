@@ -6,6 +6,7 @@ import {
   Patch,
   Param,
   Delete,
+  Query,
 } from '@nestjs/common';
 import { FuncionesService } from './funciones.service';
 import { CreateFuncionDto } from './dto/create-funcion.dto';
@@ -38,5 +39,15 @@ export class FuncionesController {
   @Delete(':id')
   remove(@Param('id') id: string) {
     return this.funcionesService.remove(+id);
+  }
+
+  @Post('empezar-funcion')
+  empezarFuncion(@Query('funcionId') funcionId: number) {
+    return this.funcionesService.empezarFuncion(funcionId);
+  }
+
+  @Post('finalizar-funcion')
+  finalizarFuncion(@Query('funcionId') funcionId: number) {
+    return this.funcionesService.finalizarFuncion(funcionId);
   }
 }
