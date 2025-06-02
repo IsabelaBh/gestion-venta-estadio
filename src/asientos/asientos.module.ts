@@ -7,5 +7,6 @@ import { LugaresModule } from 'src/lugares/lugares.module';
   imports: [LugaresModule],
   controllers: [AsientosController],
   providers: [AsientosService],
+  exports: [AsientosService],
 })
 export class AsientosModule {}

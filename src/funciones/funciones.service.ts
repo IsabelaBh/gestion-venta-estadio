@@ -7,7 +7,7 @@ import { Funcion } from './entities/funcion.entity';
 export class FuncionesService {
   funciones: Funcion[] = [
     new Funcion(1, 'Concierto', false),
-    new Funcion(2, 'Concierto', true),
+    new Funcion(2, 'Concierto', true, 10),
   ];
   idContador: number = 3;
 
