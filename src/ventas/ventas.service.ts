@@ -40,9 +40,10 @@ export class VentasService {
 
     let usuario: Usuario;
 
-    if (createVentaDto.usuarioId)
+    if (createVentaDto.usuarioId) {
       usuario = this.usuariosSer.findOne(createVentaDto.usuarioId);
-    createVentaDto.nombreUsuario = usuario.nombre;
+      createVentaDto.nombreUsuario = usuario.nombre;
+    }
 
     const venta = new Venta(
       this.idContador++,

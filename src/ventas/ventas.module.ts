@@ -9,5 +9,6 @@ import { FuncionesModule } from 'src/funciones/funciones.module';
   imports: [AsientosModule, FuncionesModule, UsuariosModule],
   controllers: [VentasController],
   providers: [VentasService],
+  exports: [VentasService],
 })
 export class VentasModule {}
