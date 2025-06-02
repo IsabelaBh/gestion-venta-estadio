@@ -1,5 +1,12 @@
 import { Transform } from 'class-transformer';
-import { IsBoolean, IsNotEmpty, IsString } from 'class-validator';
+import {
+  IsBoolean,
+  IsInt,
+  IsNotEmpty,
+  IsOptional,
+  IsPositive,
+  IsString,
+} from 'class-validator';
 
 export class CreateFuncionDto {
   @IsString()
@@ -9,5 +16,10 @@ export class CreateFuncionDto {
 
   @IsBoolean()
   @IsNotEmpty()
-  segundo_dia: boolean;
+  segundoDia: boolean;
+
+  @IsInt()
+  @IsPositive()
+  @IsOptional()
+  descuento?: number;
 }

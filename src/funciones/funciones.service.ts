@@ -15,7 +15,8 @@ export class FuncionesService {
     const funcion = new Funcion(
       this.idContador++,
       createFuncionDto.nombre,
-      createFuncionDto.segundo_dia,
+      createFuncionDto.segundoDia,
+      createFuncionDto.descuento,
     );
 
     this.funciones.push(funcion);
@@ -39,7 +40,8 @@ export class FuncionesService {
     const funcion = this.findOne(id);
 
     funcion.nombre = updateFuncionDto.nombre || funcion.nombre;
-    funcion.segundo_dia = updateFuncionDto.segundo_dia || funcion.segundo_dia;
+    funcion.segundoDia = updateFuncionDto.segundoDia || funcion.segundoDia;
+    funcion.descuento = updateFuncionDto.descuento || funcion.descuento;
 
     return 'Funcion actualizada';
   }
