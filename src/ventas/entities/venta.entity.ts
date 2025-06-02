@@ -21,24 +21,18 @@ export class Venta {
     this.funcion = funcion;
     this.asientos = asientos;
     this.nombreUsuario = nombreUsuario;
-    this.total = this.calcularTotal(funcion, asientos, usuario);
+    this.total = this.calcularTotal(funcion, asientos);
     this.usuario = usuario;
   }
 
-  calcularTotal(
-    funcion: Funcion,
-    asientos: Asiento[],
-    usuario?: Usuario,
-  ): number {
+  calcularTotal(funcion: Funcion, asientos: Asiento[]): number {
     let total = 0;
 
     for (const i of asientos) {
+      if (funcion.descuento && !i.lugar.nombre.includes('VIP'))
+        total += (total * funcion.descuento) / 100;
       total += i.lugar.precioBase;
     }
-
-    if (funcion.descuento) total -= (total * funcion.descuento) / 100;
-    if (usuario && usuario.descuento)
-      total -= (total * usuario.descuento) / 100;
 
     return total;
   }

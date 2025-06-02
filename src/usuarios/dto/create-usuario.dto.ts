@@ -19,9 +19,4 @@ export class CreateUsuarioDto {
   @IsNotEmpty()
   @Length(10, 10)
   cedula: string;
-
-  @IsInt()
-  @IsPositive()
-  @IsOptional()
-  descuento?: number;
 }

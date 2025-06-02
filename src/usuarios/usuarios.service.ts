@@ -7,7 +7,7 @@ import { Usuario } from './entities/usuario.entity';
 export class UsuariosService {
   usuarios: Usuario[] = [
     new Usuario(1, 'Juan Felipe', '1234567890'),
-    new Usuario(2, 'Sarah', '0987654321', 20),
+    new Usuario(2, 'Sarah', '0987654321'),
   ];
   idContador: number = 3;
 
@@ -16,7 +16,6 @@ export class UsuariosService {
       this.idContador++,
       createUsuarioDto.nombre,
       createUsuarioDto.cedula,
-      createUsuarioDto.descuento,
     );
 
     this.usuarios.push(usuario);
@@ -41,7 +40,6 @@ export class UsuariosService {
 
     usuario.nombre = updateUsuarioDto.nombre || usuario.nombre;
     usuario.cedula = updateUsuarioDto.cedula || usuario.cedula;
-    usuario.descuento = updateUsuarioDto.descuento || usuario.descuento;
 
     return 'Usuario actualizado';
   }
